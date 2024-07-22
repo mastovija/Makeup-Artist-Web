@@ -1,0 +1,447 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+
+*{
+  cursor: url('src/brush.png') 50 30, auto;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #000;
+    color: #fff;
+    font-family: "Montserrat", sans-serif;
+    overflow-x: hidden;
+}
+
+/* Paragraph and Heading Styling */
+p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  letter-spacing: 0.5px;
+  margin: 0 auto 20px auto;
+  color: #ddd; /* Slightly lighter color for better contrast */
+  max-width: 800px; /* Limit paragraph width */
+  padding: 0 20px; /* Add padding for smaller screens */
+}
+
+h3 {
+  font-size: 2rem;
+  margin: 20px auto 10px auto;
+  letter-spacing: 1px;
+  color: #f39c12; /* Use the same color as the hover effect for consistency */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Subtle text shadow */
+  max-width: 800px; /* Limit heading width */
+  padding: 0 20px; /* Add padding for smaller screens */
+  text-align: center; /* Center align headings */
+}
+
+
+.header {
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    z-index: 20; /* Ensures the header is above the slider */
+}
+
+.logo {
+    max-width: 100%;
+    width: 600px;
+    height: auto;
+    margin: 0 auto;
+}
+
+/* Menu Styling */
+
+.nav-container {
+  display: flex;
+  justify-content: center;
+  /*background-color: #111; /* Dark background for the menu */
+  padding: 15px 0;
+}
+
+.navMenu {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  /*background-color: #111; /* Dark background for the menu */
+  padding: 15px 0;
+  position: relative;
+}
+
+.navMenu a {
+  color: #fff; /* White color for the menu items */
+  text-decoration: none;
+  font-size: 1.3rem;
+  position: relative;
+  transition: color 0.3s; /* Smooth transition for color change */
+}
+
+.navMenu a:hover {
+  color: #f39c12; /* Change color on hover */
+}
+
+.navMenu .dot {
+  width: 6px;
+  height: 6px;
+  background-color: #f39c12; /* Color of the dot */
+  border-radius: 50%;
+  position: absolute;
+  bottom: 5px; /* Position the dot below the menu items */
+  opacity: 0;
+  transition: opacity 0.3s, transform 0.3s; /* Smooth transition for the dot */
+}
+
+.navMenu a:hover .dot {
+  opacity: 1;
+  transform: translateY(5px); /* Move the dot down on hover */
+}
+
+/* Add a dot element inside each anchor tag */
+.navMenu a::after {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background-color: #f39c12; /* Color of the dot */
+  border-radius: 50%;
+  position: absolute;
+  bottom: -10px; /* Position the dot below the menu items */
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s, transform 0.3s; /* Smooth transition for the dot */
+}
+
+.navMenu a:hover::after {
+  opacity: 1;
+  transform: translateY(5px) translateX(-50%); /* Move the dot down on hover */
+}
+
+
+
+
+
+/* FONDO ESTRELLITAS --------------------------------------------------------------------------------------------------------------------------*/
+
+.particles-border {
+    position: fixed;
+    z-index: 30;
+}
+
+#particles-left {
+    width: 100px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+}
+
+#particles-right {
+    width: 100px;
+    top: 0;
+    bottom: 0;
+    right: 0;
+}
+
+#particles-top {
+    height: 70px;
+    left: 0;
+    right: 0;
+    top: 0;
+}
+
+#particles-bottom {
+    height: 70px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+/* ---------------------------------------------------------------------------------------------------------------------------- */
+
+.main-content {
+    text-align: center;
+    padding: 50px;
+}
+
+/* SLIDER FOTOS BACKGROUND ------------------------------------------------------------------------------------------------------------------------ */
+
+.slider {
+    position: fixed;
+    top: 50px; /* Below the top particle border */
+    bottom: 50px; /* Above the bottom particle border */
+    left: 50px; /* To the right of the left particle border */
+    right: 50px; /* To the left of the right particle border */
+    /* z-index: 1; /* Behind the header and particles */
+    overflow: hidden;
+    opacity: 0.3; /* Make it semi-transparent */
+}
+
+.slides {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.slides img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    animation: fade 32s infinite;
+}
+
+.slides img:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.slides img:nth-child(2) {
+    animation-delay: 8s;
+}
+
+.slides img:nth-child(3) {
+    animation-delay: 16s;
+}
+
+.slides img:nth-child(4) {
+    animation-delay: 24s;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+        z-index: 2;
+      }
+      6.6666666667% {
+        opacity: 1;
+      }
+      26.6666666667% {
+        opacity: 1;
+      }
+      27.6666666667% {
+        opacity: 0;
+        z-index: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+}
+
+/* ----------------------------------------------------------------------------------------------------------------------------*/
+
+.section {
+  height: auto;
+  padding: 50px;
+  background: #111;
+  margin: 50px 0;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .logo {
+      width: 80%;
+  }
+
+  .menu {
+      flex-direction: column;
+  }
+
+  .menu li {
+      margin: 10px 0;
+  }
+
+  .slider {
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+  }
+
+  p, h3 {
+      padding: 0 10px; /* Add padding for smaller screens */
+  }
+}
+
+/* GALERIA FOTOS ---------------------------------------------------------------------------------------------------------------------------- */
+#quad {
+  background-color: #000;
+  font-size: 0;
+  width: 80%;
+  margin: 20px auto;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.8);
+  z-index: 35;
+  display: flex;
+  justify-content: center;
+  /*flex-wrap: wrap; /* Wrap the images */
+}
+
+#quad figure {
+  margin: 1px;
+  width: calc(50% - 10px);
+  height: auto;
+  transition: 1s;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  flex: 1 1 calc(50% - 10px);
+  box-sizing: border-box;
+}
+
+#quad figure:hover {
+  cursor: pointer;
+  z-index: 4;
+}
+
+#quad figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#quad figure figcaption {
+  margin: 0;
+  opacity: 0;
+  background: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  padding: 0.3rem;
+  font-size: 1.2rem;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  transition: 1s 1s opacity;
+}
+
+#quad figure.expanded figcaption {
+  opacity: 1;
+}
+
+.full figure:not(.expanded) {
+  pointer-events: none;
+}
+
+@media (max-width: 600px) {
+  #quad {
+    width: 100%;
+  }
+
+  #quad figure {
+    width: calc(100% - 10px);
+  }
+}
+
+ /* Modal styles */
+ .modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9); /* Black background with opacity */
+  align-items: center; /* Center the image vertically */
+  justify-content: center; /* Center the image horizontally */
+  opacity: 0; /* Hidden by default */
+  transition: opacity 0.5s ease; /* Fade-in effect */
+  flex-direction: column; /* Center content vertically */
+}
+
+.modal-content {
+  max-width: 90%;
+  max-height: 80%;
+  object-fit: contain; /* Contain within the modal */
+  margin-bottom: 20px;
+  animation: fadeInZoom 0.5s ease; /* Apply the fadeInZoom animation */
+}
+
+.close {
+  position: absolute;
+  top: 10px; /* Adjusted for closer to the upper right corner */
+  right: 20px; /* Adjusted for closer to the upper right corner */
+  color: #fff;
+  font-size: 50px; /* Increased size */
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  color: #fff;
+  font-size: 50px;
+  font-weight: bold;
+  transition: 0.3s;
+  cursor: pointer;
+  user-select: none;
+}
+
+.arrow:hover {
+  color: #bbb;
+}
+
+.left-arrow {
+  left: 25%;
+}
+
+.right-arrow {
+  right: 25%;
+}
+
+#caption {
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+}
+
+/* Animation */
+.modal.show {
+  display: flex;
+  opacity: 1; /* Show the modal */
+}
+
+@keyframes fadeInZoom {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+  /* ---------------------------------------------------------------------------------------------------------------------------- */
+
+
+  /* Basic styling for the contact section */
+#section5 {
+  text-align: center;
+  padding: 20px;
+  z-index: 1;
+}
+
+#section5 a {
+  color: #d3c8c8;
+  text-decoration: none;
+  font-size: 1.2rem;
+  margin: 0 10px;
+  display: inline-block;
+  z-index: 2;
+  position: relative;
+}
+
+#section5 a:hover {
+  color: #555;
+}
+
+#section5 i {
+  margin-right: 8px;
+  font-size: 2.5rem;
+}
